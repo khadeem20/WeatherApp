@@ -28,6 +28,11 @@ public class WeatherApp {
             double latitude = (double) location.get("latitude");
             double longitude = (double) location.get("longitude");
 
+            //extract country name
+            String country= (String) location.get("country"); 
+
+            //System.out.println("Country name -> " + country);
+
 
             // build API request URL with location coordinates
             String urlString = "https://api.open-meteo.com/v1/forecast?" + 
@@ -92,6 +97,8 @@ public class WeatherApp {
                 weatherData.put ("weather_condition", weatherCondition);
                 weatherData.put ("humidity", humidity);
                 weatherData.put ("windspeed", windspeed);
+                weatherData.put("country", country);
+                weatherData.put("location",locationName);
 
                 //debugging
                 //System.out.println("humdity: " + humidity  +  " ;  windspeed: " + windspeed);
@@ -115,12 +122,12 @@ public class WeatherApp {
             String urlString="https://geocoding-api.open-meteo.com/v1/search?name=" +
             locationName + "&count=10&language=en&format=json";
 
-            System.out.println("getLocationData: "+ urlString);
+            //System.out.println("Url for location : "+ urlString);
             try{
                 //call api and get a response
                 HttpURLConnection conn = fetchAPIResponse(urlString);
 
-                System.out.println("Conn status" + conn.getResponseCode());
+                System.out.println("Conn status for Location API -> " + conn.getResponseCode());
 
                 //check response status
                 if (conn.getResponseCode() != 200){
@@ -146,10 +153,10 @@ public class WeatherApp {
 
                     //parse the JSON string into a JSON obj
                     JSONParser parser= new JSONParser();
-                    System.out.println("Raw JSON response: " + resultJson.toString());
+                    //System.out.println("Raw JSON response from location API: " + resultJson.toString());
                     JSONObject resultsJsonObj= (JSONObject) parser.parse(String.valueOf(resultJson));
 
-                    System.out.println("resultsJsonObj " + resultsJsonObj);
+                    System.out.println("resulsJSONObj for location API ->  " + resultsJsonObj);
 
                     //get the list of location data the API generated from the location name
                     JSONArray locationData = (JSONArray) resultsJsonObj.get("results");

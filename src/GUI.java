@@ -100,6 +100,14 @@ public class GUI extends JFrame{
         windspeedText.setFont(new Font("Dialog", Font.PLAIN, 16));
         add(windspeedText);
 
+
+        // location details text
+        JLabel locationDetails = new JLabel("");
+        locationDetails.setBounds(150,100,450,55);
+        locationDetails.setFont(new Font("Dialog", Font.BOLD, 16));
+        add(locationDetails);
+
+
          //searchButton
 
        JButton searchButton= new JButton(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//search.png"));
@@ -147,6 +155,13 @@ public class GUI extends JFrame{
                         weatherConditionImage.setIcon(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//snow.png"));
                         break;
                 }
+
+                // add location Name and country
+                String location = (String) weatherData.get("location");
+                String country = (String) weatherData.get("country");
+                locationDetails.setText("<html><b>" + location + "</b> " + "," + country + "</html>");
+
+
 
                 //update temperature text
                 double temperature =(double) weatherData.get("temperature");
