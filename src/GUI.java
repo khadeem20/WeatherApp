@@ -58,12 +58,12 @@ public class GUI extends JFrame{
     
        
         // weather image
-        JLabel weatherConditionImage = new JLabel(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//cloudy.png"));
+        JLabel weatherConditionImage = new JLabel(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//clear.png"));
         weatherConditionImage.setBounds(0,125,450,217);
         add(weatherConditionImage);
 
         //temperature text
-        JLabel temperatureText = new JLabel("10 C");
+        JLabel temperatureText = new JLabel("Welcome");
         temperatureText.setBounds(0,350,450,54);
         temperatureText.setFont(new Font("Dialog", Font.BOLD, 48));
 
@@ -72,7 +72,7 @@ public class GUI extends JFrame{
         add(temperatureText);
 
         //weather conditions description
-        JLabel weatherConditionDesc = new JLabel("Cloudy");
+        JLabel weatherConditionDesc = new JLabel("Condition");
         weatherConditionDesc.setBounds(0,405,450, 36);
         weatherConditionDesc.setFont(new Font("Dialog", Font.PLAIN, 32));
         weatherConditionDesc.setHorizontalAlignment(SwingConstants.CENTER);
@@ -84,7 +84,7 @@ public class GUI extends JFrame{
         add(humidityImage);
 
         // humidity Text
-        JLabel humidityText = new JLabel("<html><b>Humidity</b> 100%</html>");
+        JLabel humidityText = new JLabel("<html><b>Humidity</b></html>");
         humidityText.setBounds(90,500,85, 55);
         humidityText.setFont(new Font("Dialog", Font.PLAIN, 16));
         add(humidityText);
@@ -95,7 +95,7 @@ public class GUI extends JFrame{
         add(windspeedImage);
 
         // windspeed Text
-        JLabel windspeedText = new JLabel("<html><b>windspeed</b> 15km/h </html>");
+        JLabel windspeedText = new JLabel("<html><b>windspeed</b></html>");
         windspeedText.setBounds(310,500,85, 55);
         windspeedText.setFont(new Font("Dialog", Font.PLAIN, 16));
         add(windspeedText);
@@ -103,7 +103,7 @@ public class GUI extends JFrame{
 
         // location details text
         JLabel locationDetails = new JLabel("");
-        locationDetails.setBounds(150,100,450,55);
+        locationDetails.setBounds(160,75,450,55);
         locationDetails.setFont(new Font("Dialog", Font.BOLD, 16));
         add(locationDetails);
 

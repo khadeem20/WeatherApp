@@ -1,4 +1,10 @@
 
+//add more features
+    - time at which forecast was retrieved
+    -precipitation
 //Remove place holder values as they are confusing
 //Show Country and City after searching
+//reduce generalized ranges for weather conditions
+// add inbetweens like partly cloudy, overcast, light rain
 // Improve icons 
+

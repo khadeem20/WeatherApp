@@ -179,7 +179,7 @@ public class WeatherApp {
                 @SuppressWarnings("deprecation")
                 URL url = new URL(urlString);
 
-                System.out.println("fetchAPIResponse: " + url);
+               // System.out.println("fetchAPIResponse: " + url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
                 //set request to get
