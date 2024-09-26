@@ -1,0 +1,5 @@
+
+//Remove place holder values as they are confusing
+//Show Country and City after searching
+// Improve icons and/or try videos
+//wrong photo icon being shown
