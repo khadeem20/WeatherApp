@@ -119,7 +119,7 @@ public class GUI extends JFrame{
                     return;
                 }
 
-                //retrieve weather data
+                //retrieve weather data object
                 weatherData = WeatherApp.getWeatherData(userInput);
 
 
@@ -128,8 +128,10 @@ public class GUI extends JFrame{
 
                 //update weather image
                 String weatherCondition = (String) weatherData.get("weather_condition");
-
-                //weather imnage will change to correspond to the condition
+                
+               // System.out.println(weatherCondition);
+                
+               //weather image will change to correspond to the condition
                 switch(weatherCondition){
                    
                     case "Clear":
@@ -139,7 +141,7 @@ public class GUI extends JFrame{
                         weatherConditionImage.setIcon(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//cloudy.png"));
                         break;
                     case "Rain":
-                        weatherConditionImage.setIcon(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//rian.png"));
+                        weatherConditionImage.setIcon(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//rain.png"));
                         break;
                     case "Snow":
                         weatherConditionImage.setIcon(loadImage("C://Users//khade//OneDrive//Documents//Projects//WeatherApp//src//Assets//snow.png"));
@@ -148,18 +150,35 @@ public class GUI extends JFrame{
 
                 //update temperature text
                 double temperature =(double) weatherData.get("temperature");
-                temperatureText.setText(temperature + "C");
+                temperatureText.setText(temperature + " C");
+
 
                 //update weather condition text
                 weatherConditionDesc.setText(weatherCondition);
 
                 //update humidity text
                 long humidity= (long) weatherData.get("humidity");
-                humidityText.setText("<html><b>Humidity</b>" + humidity +  "%</html");
+                humidityText.setText("<html><b>Humidity</b> " + humidity + "%</html>");
 
+        
+                //System.out.println("humidty;- " + humidityText);
+                
                 //update windspeed text
                 double windspeed= (double) weatherData.get("windspeed");
-                windspeedText.setText("<html><b>Windspeed</b>" + windspeed +  "km/h </html");
+                System.out.println("windspeed" + windspeed);
+                windspeedText.setText("<html><b>Windspeed</b> " + windspeed +  "km/h</html>");
+                //System.out.println("windspeed TExt: - "+ windspeedText);
+                
+                //update windspeed text (debugging for windspeed)
+                /*if (weatherData.containsKey("windspeed")) {
+                    double windspeed = (double) weatherData.get("windspeed");
+                    System.out.println("Windspeed: " + windspeed);
+                    windspeedText.setText("<html><b>Windspeed</b>: " + windspeed + " km/h</html>");
+                } else {
+                    System.out.println("Windspeed data missing or invalid");
+                }
+                */
+                //System.out.println("temperature - "+ temperature + "; humidity-" + humidity + "; windspeed - "   + windspeed );
             }
        });
        add(searchButton);

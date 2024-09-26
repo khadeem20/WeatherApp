@@ -93,10 +93,12 @@ public class WeatherApp {
                 weatherData.put ("humidity", humidity);
                 weatherData.put ("windspeed", windspeed);
 
+                //debugging
+                //System.out.println("humdity: " + humidity  +  " ;  windspeed: " + windspeed);
 
-                System.out.println("humdity: " + humidity  +  " /  windspeed: " + windspeed);
-
+                //return the weather object
                 return weatherData;
+
             }catch(Exception e){
                 e.printStackTrace();
             }
